@@ -1,0 +1,14 @@
+name: compile
+on: [pull_request]
+jobs:
+  deploy:
+    name: compile
+    runs-on: ubuntu-latest
+    container:
+      image: defreez/cs257
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - run: |
+        echo '🔨 Compiling'
+        make
